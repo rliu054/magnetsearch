@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "+q6a7iju2XMMu5DB/we6odv3/Iw=",
+			"path": "github.com/mattn/go-sqlite3",
+			"revision": "38ee283dabf11c9cbdb968eebd79b1fa7acbabe6",
+			"revisionTime": "2016-05-14T12:23:48Z"
+		},
+		{
+			"checksumSHA1": "VaFnm4l9MXu5+ArpBrZrrfst+eU=",
+			"path": "github.com/zeebo/bencode",
+			"revision": "9e17a193afc98ea546601d05f036b0b033d15b3e",
+			"revisionTime": "2016-01-31T18:21:56Z"
+		}
+	],
+	"rootPath": "github.com/rliu054/magnetsearch"
+}
