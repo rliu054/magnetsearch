@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"os"
+	"strconv"
 	"time"
 )
 
@@ -16,11 +18,18 @@ type UDPTransport struct {
 // This transport is used for all network io.
 // TODO: this looks problematic
 func NewTransport() *UDPTransport {
-	// addr := net.UDPAddr{
-	// // Port: 6881,
-	// // IP: net.ParseIP("127.0.0.1"),
-	// }
-	c, err := net.ListenUDP("udp", nil)
+	var port int
+	if os.Getenv("PORT") == "" {
+		port = 6881
+	} else {
+		port, _ = strconv.Atoi(os.Getenv("PORT"))
+	}
+
+	addr := net.UDPAddr{
+		Port: port,
+		IP:   net.ParseIP("127.0.0.1"),
+	}
+	c, err := net.ListenUDP("udp", &addr)
 	if err != nil {
 		log.Fatal(err)
 	}
