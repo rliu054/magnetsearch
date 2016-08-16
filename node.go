@@ -14,7 +14,7 @@ const (
 	UDPPacketSize = 1024
 	// maxActiveNodes is the max number of active nodes at a given time.
 	// Need to bump to higher value when codebase is stable.
-	maxActiveNodes = 100
+	maxActiveNodes = 1
 )
 
 // Bootstrappers are well known torrent nodes,
