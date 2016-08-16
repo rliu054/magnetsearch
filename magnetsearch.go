@@ -1,8 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"log"
+	"net/http"
+	"os"
 )
 
 func main() {
@@ -39,10 +40,16 @@ func main() {
 		}()
 	}
 
-	for {
-		select {
-		case msg := <-master:
-			fmt.Println(msg)
-		}
+	// for {
+	// 	select {
+	// 	case msg := <-master:
+	// 		fmt.Println(msg)
+	// 	}
+	// }
+	port := os.Getenv("PORT")
+	if port != "" {
+		http.ListenAndServe(":"+port, nil)
+	} else {
+		http.ListenAndServe(":8080", nil)
 	}
 }
